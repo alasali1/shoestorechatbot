@@ -1,0 +1,118 @@
+version: "3.1"
+
+nlu:
+- intent: buy_shoes
+  examples: |
+    - i want some shoes
+    - i'd like to buy some shoes
+    - let me get some shoes
+    - i'm interested in some shoes
+    - shoes
+    - i want to buy some shoes
+    - i need shoes
+    - can i buy shoes
+
+- intent: inform
+  examples: |
+    - i'd like some [lebron](shoe_type)'s
+    - i want to get some [airmax](shoe_type)es in a size [10](shoe_size)
+    - let me get some [kawhi](shoe_type)'s
+    - show me some [air force](shoe_type)s in a [9](shoe_size)
+    - what do you have in a size [5](shoe_size)?
+    - I wear a size [3](shoe_size)
+    - what kind of [airmax](shoe_type)es do you have?
+    - Let me get some [reebok](shoe_type)s
+    - size [12](shoe_size) [vans](shoe_type)
+    - i want [converse](shoe_type) in size [7](shoe_size)
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: thanks
+  examples: |
+    - thank you
+    - thanks
+    - ty
+    - thx
+    - tysm
+    - tyvm
+    - appreciate it
+    - preciate it
+    - good looks
+    - good lookin out
+    - good lookin
+    - gl
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: hours
+  examples: |
+    - when are you guys open
+    - what are your hours
+    - hours of operation
+    - what time do you close?
+    - are you open?
+    - are you closed?
+    - open
+    - closed
+    - time
+    - when are you open
+    - store hours
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: help
+  examples: |
+    - How can you help me?
+    - What can you do for me?
+    - can you help me?
+    - what can you do
+    - what can you do for me

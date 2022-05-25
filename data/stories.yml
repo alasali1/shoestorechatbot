@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+
+- story: hours path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hours
+  - action: utter_hours
+  - intent: thanks
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - slot_was_set:
+    - requested_slot: shoe_type
+  - slot_was_set:
+    - shoe_type: kawhi
+  - slot_was_set:
+    - shoe_type: kawhi
+  - slot_was_set:
+    - requested_slot: shoe_size
+  - slot_was_set:
+    - shoe_size: 11
+  - slot_was_set:
+    - shoe_size: 11
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_shoe_slots
+  - action: utter_submit

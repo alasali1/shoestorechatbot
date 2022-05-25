@@ -1,0 +1,41 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Give store hours anytime the user asks about hours
+  steps:
+  - intent: hours
+  - action: utter_hours
+
+- rule: explain what bot can do anytime user asks
+  steps:
+  - intent: help
+  - action: utter_help_response
+
+- rule: Activate shoe form
+  steps:
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+
+- rule: Submit shoe form
+  condition:
+  - active_loop: simple_shoe_form
+  steps:
+  - action: simple_shoe_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_shoe_slots
+  - action: utter_submit
+

@@ -1,0 +1,90 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - hours
+  - bot_challenge
+  - thanks
+  - help
+  - buy_shoes
+  - inform
+
+entities:
+- shoe_type
+- shoe_size
+
+slots:
+  shoe_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: shoe_type
+  shoe_size:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: shoe_size
+forms:
+  simple_shoe_form:
+    required_slots:
+      - shoe_type
+      - shoe_size
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Anything else?"
+  - text: "Is that everything?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_hours:
+  - text: "We are open from 8AM to 5PM."
+
+  utter_help_response:
+  - text: "I can help you look for shoes or answer questions about our store. Do you have any questions?"
+
+  utter_ask_shoe_size:
+  - text: "What size shoe do you need?"
+
+  utter_ask_shoe_type:
+  - text: "What kind of shoe are you looking for?"
+
+  utter_submit:
+  - text: "Your shoes are being delivered"
+
+  utter_shoe_slots:
+  - text: "You ordered {shoe_type} in size {shoe_size}."
+
+  utter_ask_continue:
+  - text: "Are you sure you want to stop the order?"
+
+actions:
+- utter_ask_continue
+- utter_goodbye
+- utter_greet
+- utter_shoe_slots
+- utter_submit
+- validate_simple_shoe_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
