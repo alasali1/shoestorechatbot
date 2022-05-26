@@ -11,19 +11,26 @@ nlu:
     - i want to buy some shoes
     - i need shoes
     - can i buy shoes
+    - looking for shoes
+    - lookin for some shoes
+    - what kind of shoes you got?
+    - got any shoes?
+    - kicks
+    - sneakers
 
 - intent: inform
   examples: |
     - i'd like some [lebron](shoe_type)'s
-    - i want to get some [airmax](shoe_type)es in a size [10](shoe_size)
-    - let me get some [kawhi](shoe_type)'s
-    - show me some [air force](shoe_type)s in a [9](shoe_size)
+    - i want to get some [airmaxes](shoe_type) in a size [10](shoe_size)
+    - let me get some [kawhi's](shoe_type)
+    - show me some [air forces](shoe_type) in a [9](shoe_size)
     - what do you have in a size [5](shoe_size)?
     - I wear a size [3](shoe_size)
-    - what kind of [airmax](shoe_type)es do you have?
-    - Let me get some [reebok](shoe_type)s
+    - what kind of [airmaxes](shoe_type) do you have?
+    - Let me get some [reeboks](shoe_type)
     - size [12](shoe_size) [vans](shoe_type)
     - i want [converse](shoe_type) in size [7](shoe_size)
+    - [jordans](shoe_type) size [9](shoe_size)
 
 - intent: greet
   examples: |
@@ -40,6 +47,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - what's up
+    - wassup
+    - yo
+    - what's good
+    - wus good
 
 - intent: goodbye
   examples: |
@@ -53,6 +65,9 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - peace
+    - peace out
+    - be easy
 
 - intent: thanks
   examples: |
@@ -77,6 +92,15 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yeah
+    - yah
+    - yeh
+    - yup
+    - yawp
+    - yessir
+    - yezzir
+    - yes sir
+    - yes ma'am
 
 - intent: deny
   examples: |
@@ -87,6 +111,9 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nah
+    - naw
+    - nope
 
 - intent: hours
   examples: |
@@ -108,6 +135,7 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - are you human?
 
 - intent: help
   examples: |
@@ -116,3 +144,19 @@ nlu:
     - can you help me?
     - what can you do
     - what can you do for me
+    - I need help
+    - help me
+
+- intent: cancel_order
+  examples: |
+    - nevermind
+    - nvm
+    - cancel that
+    - i changed my mind
+    - cancel
+    - stop
+    - end
+    - quit
+    - quit order
+    - cancel order
+    - terminate order

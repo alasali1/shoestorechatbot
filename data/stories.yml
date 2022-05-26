@@ -11,7 +11,66 @@ stories:
   - intent: thanks
   - action: utter_did_that_help
   - intent: affirm
-  - action: utter_happy
+  - action: utter_goodbye
+
+- story: additional help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hours
+  - action: utter_hours
+  - intent: thanks
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_what_else
+
+- story: user ends transaction
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - intent: cancel_order
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: action_deactivate_loop
+  - active_loop: null
+
+- story: user decides to continue transaction
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - intent: cancel_order
+  - action: utter_ask_continue
+  - intent: deny
+  - slot_was_set:
+    - requested_slot: shoe_type
+
+- story: interactive_story_2
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - slot_was_set:
+    - requested_slot: shoe_type
+  - slot_was_set:
+    - shoe_type: lebrons
+  - slot_was_set:
+    - requested_slot: shoe_size
+  - intent: cancel_order
+  - action: utter_ask_continue  
+  - intent: affirm
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_deactivate_loop
+  - active_loop: null
+    
 
 - story: interactive_story_1
   steps:
@@ -25,11 +84,7 @@ stories:
   - slot_was_set:
     - shoe_type: kawhi
   - slot_was_set:
-    - shoe_type: kawhi
-  - slot_was_set:
     - requested_slot: shoe_size
-  - slot_was_set:
-    - shoe_size: 11
   - slot_was_set:
     - shoe_size: 11
   - slot_was_set:

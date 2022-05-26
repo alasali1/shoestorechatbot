@@ -7,6 +7,11 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: say hello anytime user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
@@ -39,3 +44,7 @@ rules:
   - action: utter_shoe_slots
   - action: utter_submit
 
+- rule: Ask if user really wants to cancel order
+  steps:
+  - intent: cancel_order
+  - action: utter_ask_continue

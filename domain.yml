@@ -36,7 +36,7 @@ forms:
       - shoe_size
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How can I help you?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -44,14 +44,13 @@ responses:
 
   utter_did_that_help:
   - text: "Did that help you?"
-  - text: "Anything else?"
+  - text: "Did that answer your questions?"
   - text: "Is that everything?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Great, carry on!"
+  - text: "Have a nice day!"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
@@ -63,7 +62,7 @@ responses:
   - text: "I can help you look for shoes or answer questions about our store. Do you have any questions?"
 
   utter_ask_shoe_size:
-  - text: "What size shoe do you need?"
+  - text: "What size do you need?"
 
   utter_ask_shoe_type:
   - text: "What kind of shoe are you looking for?"
@@ -77,12 +76,17 @@ responses:
   utter_ask_continue:
   - text: "Are you sure you want to stop the order?"
 
+  utter_what_else:
+  - text: "What else can I help you with?"
+
 actions:
 - utter_ask_continue
 - utter_goodbye
 - utter_greet
+- utter_what_else
 - utter_shoe_slots
 - utter_submit
+- action_deactivate_loop
 - validate_simple_shoe_form
 
 session_config:
