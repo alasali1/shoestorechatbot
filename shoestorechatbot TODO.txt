@@ -1,0 +1,12 @@
+I want the bot to ask if the order is correct, then have the user affirm it before submitting.
+If the user denys it is correct the bot should be able to change the shoe size and type.
+
+Do I want to reset the previous values in the form?
+
+Maybe I could ask the user what input they want to change. I could probably do this by making a custom action.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Another thing I want to accomplish is to have the bot prompt the user again after the 
+user decides to continue the transaction.

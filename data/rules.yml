@@ -43,6 +43,7 @@ rules:
     - requested_slot: null
   - action: utter_shoe_slots
   - action: utter_submit
+  - action: action_restart
 
 - rule: Ask if user really wants to cancel order
   steps:

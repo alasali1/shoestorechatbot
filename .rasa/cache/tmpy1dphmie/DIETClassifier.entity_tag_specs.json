@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-shoe_size",
+      "2": "I-shoe_size",
+      "3": "L-shoe_size",
+      "4": "U-shoe_size",
+      "5": "B-shoe_type",
+      "6": "I-shoe_type",
+      "7": "L-shoe_type",
+      "8": "U-shoe_type",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-shoe_size": 1,
+      "I-shoe_size": 2,
+      "L-shoe_size": 3,
+      "U-shoe_size": 4,
+      "B-shoe_type": 5,
+      "I-shoe_type": 6,
+      "L-shoe_type": 7,
+      "U-shoe_type": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

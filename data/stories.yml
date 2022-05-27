@@ -24,6 +24,13 @@ stories:
   - intent: deny
   - action: utter_what_else
 
+- story: user wants to know about bot
+  steps:
+  - intent: help
+  - action: utter_help_response
+  - intent: affirm
+  - action: utter_offer_help
+
 - story: user ends transaction
   steps:
   - intent: greet
@@ -34,7 +41,7 @@ stories:
   - intent: cancel_order
   - action: utter_ask_continue
   - intent: affirm
-  - action: action_deactivate_loop
+  - action: action_restart
   - active_loop: null
 
 - story: user decides to continue transaction
@@ -68,10 +75,9 @@ stories:
   - intent: affirm
   - slot_was_set:
     - requested_slot: null
-  - action: action_deactivate_loop
+  - action: action_restart
   - active_loop: null
     
-
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -92,3 +98,60 @@ stories:
   - active_loop: null
   - action: utter_shoe_slots
   - action: utter_submit
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - slot_was_set:
+    - requested_slot: shoe_type
+  - slot_was_set:
+    - shoe_type: air max
+  - slot_was_set:
+    - shoe_type: air max
+  - slot_was_set:
+    - requested_slot: shoe_size
+  - slot_was_set:
+    - shoe_size: '12'
+  - slot_was_set:
+    - shoe_size: '12'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_shoe_slots
+  - action: utter_submit
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - intent: buy_shoes
+  - action: simple_shoe_form
+  - active_loop: simple_shoe_form
+  - slot_was_set:
+    - requested_slot: shoe_type
+  - intent: cancel_order
+  - action: utter_ask_continue
+  - intent: deny
+  - action: utter_ask_shoe_type
+  - intent: inform
+    entities:
+    - shoe_type: air force
+  - slot_was_set:
+    - shoe_type: air force
+  - action: simple_shoe_form
+  - slot_was_set:
+    - requested_slot: shoe_size
+  - slot_was_set:
+    - shoe_size: '9'
+  - slot_was_set:
+    - shoe_size: '9'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_shoe_slots
+  - action: utter_submit
+  - action: action_restart

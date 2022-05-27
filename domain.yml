@@ -1,21 +1,19 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - hours
-  - bot_challenge
-  - thanks
-  - help
-  - buy_shoes
-  - inform
-
+- affirm
+- bot_challenge
+- buy_shoes
+- cancel_order
+- deny
+- goodbye
+- greet
+- help
+- hours
+- inform
+- thanks
 entities:
-- shoe_type
 - shoe_size
-
+- shoe_type
 slots:
   shoe_type:
     type: text
@@ -32,63 +30,53 @@ slots:
 forms:
   simple_shoe_form:
     required_slots:
-      - shoe_type
-      - shoe_size
+    - shoe_type
+    - shoe_size
 responses:
   utter_greet:
-  - text: "Hey! How can I help you?"
-
+  - text: Hey! How can I help you?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-  - text: "Did that answer your questions?"
-  - text: "Is that everything?"
-
+  - text: Did that help you?
+  - text: Did that answer your questions?
+  - text: Is that everything?
   utter_goodbye:
-  - text: "Bye"
-  - text: "Great, carry on!"
-  - text: "Have a nice day!"
-
+  - text: Bye
+  - text: Great, carry on!
+  - text: Have a nice day!
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_hours:
-  - text: "We are open from 8AM to 5PM."
-
+  - text: We are open from 8AM to 5PM.
   utter_help_response:
-  - text: "I can help you look for shoes or answer questions about our store. Do you have any questions?"
-
+  - text: I can help you look for shoes or answer questions about our store. Do you have any questions?
+  utter_offer_help:
+  - text: How can I help you?
   utter_ask_shoe_size:
-  - text: "What size do you need?"
-
+  - text: What size do you need?
   utter_ask_shoe_type:
-  - text: "What kind of shoe are you looking for?"
-
+  - text: What kind of shoe are you looking for?
   utter_submit:
-  - text: "Your shoes are being delivered"
-
+  - text: Thank you for ordering with us =)
   utter_shoe_slots:
-  - text: "You ordered {shoe_type} in size {shoe_size}."
-
+  - text: Ok, so you want {shoe_type} in size {shoe_size}.
   utter_ask_continue:
-  - text: "Are you sure you want to stop the order?"
-
+  - text: Are you sure you want to stop the order? Your input will be lost.
   utter_what_else:
-  - text: "What else can I help you with?"
-
+  - text: What else can I help you with?
 actions:
 - utter_ask_continue
+- utter_ask_shoe_type
 - utter_goodbye
 - utter_greet
-- utter_what_else
+- utter_help_response
+- utter_offer_help
 - utter_shoe_slots
 - utter_submit
-- action_deactivate_loop
+- utter_what_else
 - validate_simple_shoe_form
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

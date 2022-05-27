@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: buy_shoes
   examples: |
@@ -17,7 +16,8 @@ nlu:
     - got any shoes?
     - kicks
     - sneakers
-
+    - I need some running shoes
+    - I'm looking for shoes
 - intent: inform
   examples: |
     - i'd like some [lebron](shoe_type)'s
@@ -31,7 +31,13 @@ nlu:
     - size [12](shoe_size) [vans](shoe_type)
     - i want [converse](shoe_type) in size [7](shoe_size)
     - [jordans](shoe_type) size [9](shoe_size)
-
+    - [nikes](shoe_type) size [8](shoe_size)
+    - [adidas](shoe_type) in [10](shoe_size)
+    - [air max 95](shoe_type)
+    - I want some [air max](shoe_type) 95s
+    - I wear a size [12](shoe_size)
+    - [air force](shoe_type) 1s
+    - I needa size [9](shoe_size)
 - intent: greet
   examples: |
     - hey
@@ -52,7 +58,6 @@ nlu:
     - yo
     - what's good
     - wus good
-
 - intent: goodbye
   examples: |
     - cu
@@ -68,7 +73,6 @@ nlu:
     - peace
     - peace out
     - be easy
-
 - intent: thanks
   examples: |
     - thank you
@@ -83,7 +87,6 @@ nlu:
     - good lookin out
     - good lookin
     - gl
-
 - intent: affirm
   examples: |
     - yes
@@ -101,7 +104,6 @@ nlu:
     - yezzir
     - yes sir
     - yes ma'am
-
 - intent: deny
   examples: |
     - no
@@ -114,7 +116,6 @@ nlu:
     - nah
     - naw
     - nope
-
 - intent: hours
   examples: |
     - when are you guys open
@@ -128,7 +129,6 @@ nlu:
     - time
     - when are you open
     - store hours
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -136,7 +136,6 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - are you human?
-
 - intent: help
   examples: |
     - How can you help me?
@@ -146,7 +145,6 @@ nlu:
     - what can you do for me
     - I need help
     - help me
-
 - intent: cancel_order
   examples: |
     - nevermind

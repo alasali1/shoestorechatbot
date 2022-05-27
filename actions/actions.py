@@ -8,6 +8,7 @@ from rasa_sdk.types import DomainDict
 ALLOWED_SHOE_SIZES = ["1","2","3","4","5","6","7","8","9","10","11","12","13"]
 #ALLOWED_SHOE_TYPES = ["jordan", "reebok", "airmax", "vans", "kawhi", "lebron", "converse", "airforce"]
 
+
 class ValidateSimpleShoeForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_simple_shoe_form"
